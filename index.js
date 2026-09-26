@@ -5,13 +5,13 @@ require('dotenv').config();
 const app = express();
 const routerPage=require('./Router/userRouter')
 app.use(cors({
-  origin: [
-    'http://localhost:5173',            
+  origin: [           
     'https://sg-59.netlify.app',       
   ],
   allowedHeaders: ['Content-Type', 'token'],  
   methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
 }));
+// app.use(cors())
 app.use(express.json());
 const PORT = process.env.PORT || 5000;
 const MONGO_URI = process.env.MONGO_URI ;
